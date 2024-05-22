@@ -7,6 +7,7 @@ from schema.person_schema import PersonSchema, PersonCreate, PersonUpdate
 
 person_router = APIRouter()
 
+
 @person_router.get("/", response_model = List[PersonSchema])
 def read_persons(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     return get_all_persons(db, skip=skip, limit=limit)
@@ -17,7 +18,8 @@ def read_person(person_id: int, db: Session = Depends(get_db)):
 
 @person_router.post("/", response_model=PersonSchema)
 def create_new_person(person: PersonCreate, db: Session = Depends(get_db)):
-    return create_person(db=db, person=person)
+    with db as session:
+        return create_person(db=session, person=person)
 
 @person_router.put("/{person_id}", response_model=PersonSchema)
 def update_existing_person(person_id: int, person: PersonUpdate, db: Session = Depends(get_db)):

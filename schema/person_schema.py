@@ -23,4 +23,4 @@ class PersonSchema(PersonBase):
     last_login: Optional[datetime] = None
 
     class Config:
-        orm_mode = True
+        from_atributes = True
