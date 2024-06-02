@@ -1,14 +1,15 @@
 from typing import List
-from fastapi import HTTPException
+from fastapi import HTTPException, Form
+from security import verify_password, create_token_jwt
 from sqlalchemy.orm import Session
-from model.Session import Session
+from model.Session import Sessions
 from model.Person import Person
 from schema.session_schema import SessionCreate, SessionUpdate
 from datetime import datetime
 
 
 def get_all_sessions(db: Session, skip: int, limit: int) -> List[Session]:
-    sessions = db.query(Session).offset(skip).limit(limit).all()
+    sessions = db.query(Sessions).offset(skip).limit(limit).all()
 
     if not sessions:
         raise HTTPException(status_code=404, detail="Not found")
@@ -22,7 +23,7 @@ def create_session(db: Session, session: SessionCreate) -> Session:
         raise HTTPException(status_code=404, detail="Person not found")
 
 
-    db_session = Session(
+    db_session = Sessions(
         user_agent=session.user_agent,
         ip=session.ip,
         jwt_token=session.jwt_token,
@@ -38,7 +39,7 @@ def create_session(db: Session, session: SessionCreate) -> Session:
     return db_session
 
 def get_session(db: Session, session_id: int) -> Session:
-    session = db.query(Session).filter(Session.id == session_id).first()
+    session = db.query(Sessions).filter(Session.id == session_id).first()
 
     if not session:
         raise HTTPException(status_code=404, detail="Not found")
@@ -46,7 +47,7 @@ def get_session(db: Session, session_id: int) -> Session:
     return session
 
 def update_session(db: Session, session_id: int, session: SessionUpdate) -> Session:
-    db_session = db.query(Session).filter(Session.id == session_id).first()
+    db_session = db.query(Sessions).filter(Session.id == session_id).first()
 
     if not db_session:
         raise HTTPException(status_code=404, detail="Not found")
@@ -59,7 +60,7 @@ def update_session(db: Session, session_id: int, session: SessionUpdate) -> Sess
     return db_session
 
 def delete_session(db: Session, session_id: int) -> Session:
-    db_session = db.query(Session).filter(Session.id == session_id).first()
+    db_session = db.query(Sessions).filter(Session.id == session_id).first()
 
     if not db_session:
         raise HTTPException(status_code=404, detail="Not found")
@@ -67,3 +68,14 @@ def delete_session(db: Session, session_id: int) -> Session:
     db.delete(db_session)
     db.commit()
     return {"message": "Session deleted successfully"}
+
+def login(db: Session, username: str = Form(...), password: str = Form(...)):
+    user = db.query(Person).filter(Person.username == username).first()
+
+    if not user or not verify_password(password, user.password):
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+
+    return {
+        "access_token": create_token_jwt(user.id),
+        "token_type": "bearer"
+    }

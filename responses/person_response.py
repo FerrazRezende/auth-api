@@ -10,3 +10,7 @@ class PersonResponse(BaseModel):
 
     class Config:
         orm_mode = True
+
+class PersonUpdateResponse(BaseModel):
+    id: int
+    username: str

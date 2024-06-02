@@ -1,6 +1,14 @@
 version: '3.1'
 
 services:
+  web:
+    build: .
+    command: uvicorn server:app --host 0.0.0.0 --port 8001
+    volumes:
+      - .:/app
+    ports:
+      - "8001:8001"
+
   postgresql:
     image: postgres
     restart: always

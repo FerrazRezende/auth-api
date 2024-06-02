@@ -1,6 +1,7 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field, validator
 from typing import Optional
 from datetime import datetime
+from security import get_password_hash
 
 class PersonBase(BaseModel):
     first_name: str
@@ -10,9 +11,14 @@ class PersonBase(BaseModel):
 class PersonCreate(PersonBase):
     pass
 
-class PersonUpdate(PersonBase):
-    username: Optional[str] = None
+class PersonUpdate(BaseModel):
     password: Optional[str] = None
+
+    @validator('password', pre=True)
+    def hash_the_password(cls, v):
+        if v:
+            return get_password_hash(v)
+        return v
 
 class PersonSchema(PersonBase):
     id: int

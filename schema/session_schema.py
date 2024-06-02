@@ -21,4 +21,11 @@ class SessionSchema(SessionBase):
 
     class Config:
         orm_mod = True
-    
+
+
+class TokenPayload(BaseModel):
+    sub: Optional[int] = None
+
+class TokenData(BaseModel):
+    access_token: str
+    token_type: str

@@ -1,11 +1,11 @@
 from typing import List
-from fastapi import HTTPException
+from fastapi import HTTPException, Depends
 from sqlalchemy.orm import Session
 from model.Person import Person
-from responses.person_response import PersonResponse
+from model.Session import Sessions
 from schema.person_schema import PersonCreate, PersonUpdate
 from datetime import datetime
-
+from depends import get_current_user
 
 
 def get_all_persons(db: Session, skip: int, limit: int) -> List[Person]:
@@ -16,6 +16,7 @@ def get_all_persons(db: Session, skip: int, limit: int) -> List[Person]:
     
     for person in persons:
         person.birth_date = person.birth_date.isoformat()
+        person.created_at = person.created_at.isoformat()
     
     return persons
 
@@ -34,6 +35,7 @@ def create_person(db: Session, person: PersonCreate) -> Person:
     db.commit()
     db.refresh(db_person)
     db_person.birth_date = db_person.birth_date.isoformat()
+    db_person.created_at = db_person.created_at.isoformat()
 
     return db_person
 
@@ -43,26 +45,28 @@ def get_person(db: Session, person_id: int) -> Person:
     if not person:
         raise HTTPException(status_code=404, detail="Not found")
     
+    person.created_at = person.created_at.isoformat()
     person.birth_date = person.birth_date.isoformat()
     return person
 
-def update_person(db: Session, person_id: int, person: PersonUpdate) -> Person:
+def update_person(db: Session, person_id: int, person: PersonUpdate):
     db_person = db.query(Person).filter(Person.id == person_id).first()
-
     if not db_person:
-        raise HTTPException(status_code=404, detail="Not found")
-    
-    for key, value in person.dict().items():
-        setattr(db_person, key, value)
+        raise HTTPException(status_code=404, detail="Person not found")
+
+    if person.password is not None:
+        db_person.password = person.password
 
     db.commit()
-    db_person.birth_date = db_person.birth_date.isoformat()
     db.refresh(db_person)
     return db_person
 
 def delete_person(db: Session, person_id: int) -> Person:
-    db_person = db.query(Person).filter(Person.id == person_id)
+    db_sessions = db.query(Sessions).filter(Sessions.person_id == person_id).all()
+    for session in db_sessions:
+        db.delete(session)
 
+    db_person = db.query(Person).filter(Person.id == person_id).first()
     if not db_person:
         raise HTTPException(status_code=404, detail="Not found")
     
