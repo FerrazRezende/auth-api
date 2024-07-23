@@ -77,5 +77,10 @@ def login(db: Session, username: str = Form(...), password: str = Form(...)):
 
     return {
         "access_token": create_token_jwt(user.id),
+<<<<<<< HEAD
         "token_type": "bearer"
+=======
+        "token_type": "bearer",
+        "id_user": user.id
+>>>>>>> 6ccfcf3 (getting started with automated testing)
     }

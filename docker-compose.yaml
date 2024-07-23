@@ -8,6 +8,11 @@ services:
       - .:/app
     ports:
       - "8001:8001"
+<<<<<<< HEAD
+=======
+    networks:
+      - authapi
+>>>>>>> 6ccfcf3 (getting started with automated testing)
 
   postgresql:
     image: postgres
@@ -20,6 +25,9 @@ services:
       POSTGRES_DB: ${PG_DB}
     volumes:
       - ./pgdata:/var/lib/postgresql/data
+      - ./tests/database:/docker-entrypoint-initdb.d
+    networks:
+      - authapi
 
   pgadmin:
     image: dpage/pgadmin4
@@ -30,3 +38,9 @@ services:
       - 5050:80
     depends_on:
       - postgresql
+    networks:
+      - authapi
+
+networks:
+  authapi:
+    driver: bridge

@@ -1,12 +1,20 @@
 from sqlalchemy.orm import Session
 from database import get_db
+<<<<<<< HEAD
 from fastapi import Depends, HTTPException, status
+=======
+from fastapi import Depends, HTTPException, status, Request
+>>>>>>> 6ccfcf3 (getting started with automated testing)
 from fastapi.security import OAuth2PasswordBearer
 from jose import jwt
 from schema.session_schema import TokenPayload
 
 from model.Person import Person
+<<<<<<< HEAD
 from security import JWT_SECRET_KEY, JWT_ALGORITHM
+=======
+from security import JWT_SECRET_KEY, JWT_ALGORITHM, CREATE_TOKEN
+>>>>>>> 6ccfcf3 (getting started with automated testing)
 
 reusable_oauth2 = OAuth2PasswordBearer(tokenUrl="/session/login")
 
@@ -24,4 +32,18 @@ def get_current_user(token: str = Depends(reusable_oauth2), db: Session = Depend
     if not user:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Usuário não encontrado")
     
+<<<<<<< HEAD
     return user
+=======
+    return user
+
+def verify_create_token(request: Request):
+    token = request.headers.get("Authorization")
+
+    if not token:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Token não fornecido")
+    if token != CREATE_TOKEN:
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Token inválido")
+
+    return True
+>>>>>>> 6ccfcf3 (getting started with automated testing)

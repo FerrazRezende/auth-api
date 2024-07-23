@@ -25,7 +25,8 @@ def upgrade() -> None:
         sa.Column('first_name', sa.String, index=True),
         sa.Column('last_name', sa.String, index=True),
         sa.Column('username', sa.String, unique=True, index=True),
-        sa.Column('birth_date', sa.DateTime),
+        sa.Column('password', sa.String, index=True),
+        sa.Column('birth_date', sa.Date),
         sa.Column('created_at', sa.DateTime, server_default=sa.text('NOW()')),
         sa.Column('last_login', sa.DateTime)
     )
