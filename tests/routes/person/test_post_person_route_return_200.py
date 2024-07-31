@@ -1,22 +1,21 @@
-import requests
-import requests_mock
-import json
-from datetime import datetime
+import pytest
+import os
+from fastapi.testclient import TestClient
+from server import app
 
+@pytest.mark.route
+def test_create_person(db_session):
+    token = os.getenv('CREATE_TOKEN')
+    headers = {
+        "Authorization": f"{token}"
+    }
 
-def crate_person(person_data):
-    response = requests.post("http://localhost:8000/person/", json=person_data)
-    return response
-
-
-def test_create_person():
     person_data = {
-        "first_name": "Matheus",
-        "last_name": "Ferraz",
+        "first_name": "teste",
+        "last_name": "da silva",
         "birth_date": "15/09/2000"
     }
 
-    with requests_mock.Mocker() as m:
-        m.post("http://localhost:8000/person/", status_code=200)
-        response = crate_person(person_data)
-        assert response.status_code == 200
+    client = TestClient(app)
+    response = client.post("/person/", json=person_data, headers=headers)
+    assert response.status_code == 200

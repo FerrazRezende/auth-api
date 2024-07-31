@@ -2,6 +2,7 @@ import pytest
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy import text
 
+@pytest.mark.db
 def test_database_connection(db_session):
     try:
         result = db_session.execute(text("SELECT 1"))

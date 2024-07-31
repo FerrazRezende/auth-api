@@ -9,11 +9,7 @@ class PersonResponse(BaseModel):
     created_at: str
 
     class Config:
-<<<<<<< HEAD
-        orm_mode = True
-=======
         from_attributes = True
->>>>>>> 6ccfcf3 (getting started with automated testing)
 
 class PersonUpdateResponse(BaseModel):
     id: int

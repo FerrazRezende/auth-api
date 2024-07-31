@@ -59,7 +59,7 @@ def update_session(db: Session, session_id: int, session: SessionUpdate) -> Sess
     db.refresh(db_session)
     return db_session
 
-def delete_session(db: Session, session_id: int) -> Session:
+def delete_session(db: Session, session_id: int) -> dict[str, str]:
     db_session = db.query(Sessions).filter(Session.id == session_id).first()
 
     if not db_session:
@@ -77,10 +77,6 @@ def login(db: Session, username: str = Form(...), password: str = Form(...)):
 
     return {
         "access_token": create_token_jwt(user.id),
-<<<<<<< HEAD
-        "token_type": "bearer"
-=======
-        "token_type": "bearer",
+        "token_type": "Bearer",
         "id_user": user.id
->>>>>>> 6ccfcf3 (getting started with automated testing)
     }

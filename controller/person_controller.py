@@ -1,16 +1,12 @@
-<<<<<<< HEAD
 from typing import List
-from fastapi import HTTPException, Depends
-=======
+from fastapi import HTTPException
 from typing import List, Type
 from fastapi import HTTPException
->>>>>>> 6ccfcf3 (getting started with automated testing)
 from sqlalchemy.orm import Session
 from model.Person import Person
 from model.Session import Sessions
 from schema.person_schema import PersonCreate, PersonUpdate
 from datetime import datetime
-from depends import get_current_user
 
 
 def get_all_persons(db: Session, skip: int, limit: int) -> List[Type[Person]]:
@@ -66,11 +62,7 @@ def update_person(db: Session, person_id: int, person: PersonUpdate):
     db.refresh(db_person)
     return db_person
 
-<<<<<<< HEAD
-def delete_person(db: Session, person_id: int) -> Person:
-=======
 def delete_person(db: Session, person_id: int) -> dict[str, str]:
->>>>>>> 6ccfcf3 (getting started with automated testing)
     db_sessions = db.query(Sessions).filter(Sessions.person_id == person_id).all()
     for session in db_sessions:
         db.delete(session)

@@ -10,11 +10,8 @@ JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY')
 JWT_ALGORITHM = os.getenv('JWT_ALGORITHM')
 JWT_EXPIRATION_TIME_MINUTES = int(os.getenv('JWT_EXPIRATION_TIME_MINUTES'))
 
-<<<<<<< HEAD
-=======
-CREATE_TOKEN = os.getenv('CREATE_TOKEN')
 
->>>>>>> 6ccfcf3 (getting started with automated testing)
+CREATE_TOKEN = os.getenv('CREATE_TOKEN')
 
 pwd_context = CryptContext(schemes=["sha256_crypt"], deprecated="auto")
 

@@ -20,11 +20,7 @@ class SessionSchema(SessionBase):
     end_session: Optional[datetime] = None  # new line
 
     class Config:
-<<<<<<< HEAD
-        orm_mod = True
-=======
         from_attributes = True
->>>>>>> 6ccfcf3 (getting started with automated testing)
 
 
 class TokenPayload(BaseModel):
@@ -32,9 +28,6 @@ class TokenPayload(BaseModel):
 
 class TokenData(BaseModel):
     access_token: str
-<<<<<<< HEAD
     token_type: str
-=======
     token_type: str
     id_user: int
->>>>>>> 6ccfcf3 (getting started with automated testing)

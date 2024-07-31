@@ -28,7 +28,6 @@ def upgrade() -> None:
         sa.Column('password', sa.String, index=True),
         sa.Column('birth_date', sa.Date),
         sa.Column('created_at', sa.DateTime, server_default=sa.text('NOW()')),
-        sa.Column('last_login', sa.DateTime)
     )
     # ### end Alembic commands ###
 

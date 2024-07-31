@@ -10,8 +10,9 @@ load_dotenv()
 PG_PASS = os.getenv("PG_PASS")
 PG_USER = os.getenv("PG_USER")
 PG_DB = os.getenv("PG_DB")
+TEST_PG_DB = os.getenv("TEST_DB")
 
-DATABASE_URL = f"postgresql://{PG_USER}:{PG_PASS}@172.18.0.2:5432/{PG_DB}"
+DATABASE_URL = f"postgresql://{PG_USER}:{PG_PASS}@192.168.144.2:5432/{PG_DB}"
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(bind=engine)
