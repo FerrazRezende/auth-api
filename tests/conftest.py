@@ -10,7 +10,7 @@ Base = declarative_base()
 
 @pytest.fixture(scope="session")
 def test_engine():
-    return create_engine(f"postgresql://{PG_USER}:{PG_PASS}@192.168.144.2:5432/{TEST_PG_DB}")
+    return create_engine(f"postgresql://{PG_USER}:{PG_PASS}@172.18.0.2:5432/{TEST_PG_DB}")
 
 @pytest.fixture(scope="session")
 def TestSessionLocal(test_engine):

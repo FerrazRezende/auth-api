@@ -1,5 +1,6 @@
 from router.person_router import person_router
 from router.session_router import session_router
+from router.auth_router import auth_router
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 import uvicorn
@@ -18,6 +19,7 @@ app.add_middleware(
 
 app.include_router(person_router, prefix="/person", tags=["Person"])
 app.include_router(session_router, prefix="/session", tags=["Session"])
+app.include_router(auth_router, prefix='/auth', tags=["Auth"])
 
 
 @app.get("/", tags=["Root"])

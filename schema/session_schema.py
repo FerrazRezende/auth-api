@@ -12,22 +12,16 @@ class SessionCreate(SessionBase):
     pass
 
 class SessionUpdate(SessionBase):
+    person_id: Optional[int]
+    user_agent: Optional[str] = None
+    ip: Optional[str] = None
+    jwt_token: Optional[str] = None
     last_login: Optional[datetime] = None
 
 class SessionSchema(SessionBase):
     id: int
     last_login: datetime
-    end_session: Optional[datetime] = None  # new line
 
     class Config:
         from_attributes = True
 
-
-class TokenPayload(BaseModel):
-    sub: Optional[int] = None
-
-class TokenData(BaseModel):
-    access_token: str
-    token_type: str
-    token_type: str
-    id_user: int

@@ -4,13 +4,14 @@ from server import app
 from tests.depends import get_token_jwt
 
 
-@pytest.mark.route
-def test_get_person():
-    token = get_token_jwt()
+@pytest.mark.auth
+def test_auth_get_person():
+    token = get_token_jwt() + "invalid"
     headers = {
         "Authorization": f"Bearer {token}"
     }
 
     client = TestClient(app)
     response = client.get("/person/", headers=headers)
-    assert response.status_code == 200
+    print(response.json())
+    assert response.status_code == 403

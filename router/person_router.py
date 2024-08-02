@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import HTTPException, APIRouter, Depends, Header
 from sqlalchemy.orm import Session 
 from typing import List
 from database import get_db
@@ -6,8 +6,7 @@ from controller.person_controller import get_all_persons, create_person, get_per
 from schema.person_schema import PersonCreate, PersonUpdate
 from responses.person_response import PersonResponse, PersonUpdateResponse
 from depends import get_current_user
-
-from depends import get_current_user, verify_create_token
+import os
 
 
 person_router = APIRouter()
@@ -21,8 +20,11 @@ def read_persons(skip: int = 0, limit: int = 100, db: Session = Depends(get_db))
 def read_person(person_id: int, db: Session = Depends(get_db)):
     return get_person(db, person_id=person_id)
 
-@person_router.post("/", response_model=PersonResponse, dependencies=[Depends(verify_create_token)])
-def create_new_person(person: PersonCreate, db: Session = Depends(get_db)):
+@person_router.post("/", response_model=PersonResponse)
+def create_new_person(person: PersonCreate, token: str = Header(...), db: Session = Depends(get_db)):
+    if token != os.getenv("CREATE_TOKEN"):
+        raise HTTPException(status_code=403, detail="Forbidden")
+
     with db as session:
         return create_person(db=session, person=person)
 

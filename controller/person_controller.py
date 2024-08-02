@@ -22,7 +22,7 @@ def get_all_persons(db: Session, skip: int, limit: int) -> List[Type[Person]]:
     return persons
 
 def create_person(db: Session, person: PersonCreate) -> Person:
-    birth_date = datetime.strptime(person.birth_date, '%d/%m/%Y').date()
+    birth_date = datetime.strptime(person.birth_date, '%Y-%m-%d').date()
 
     db_person = Person(
         first_name=person.first_name,
@@ -57,6 +57,11 @@ def update_person(db: Session, person_id: int, person: PersonUpdate):
 
     if person.password is not None:
         db_person.password = person.password
+    
+    for key, value in vars(person).items():
+        if value is not None:
+            setattr(db_person, key, value)
+
 
     db.commit()
     db.refresh(db_person)

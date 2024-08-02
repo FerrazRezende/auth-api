@@ -2,6 +2,8 @@ from passlib.context import CryptContext
 from typing import Any, Union
 from datetime import datetime, timedelta
 from jose import jwt
+import secrets
+import string
 import os
 
 
@@ -12,6 +14,8 @@ JWT_EXPIRATION_TIME_MINUTES = int(os.getenv('JWT_EXPIRATION_TIME_MINUTES'))
 
 
 CREATE_TOKEN = os.getenv('CREATE_TOKEN')
+
+invalid_tokens = set()
 
 pwd_context = CryptContext(schemes=["sha256_crypt"], deprecated="auto")
 
@@ -27,3 +31,4 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
 
 def get_password_hash(password: str) -> str:
     return pwd_context.hash(password)
+

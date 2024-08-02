@@ -1,9 +1,9 @@
-from fastapi import APIRouter, Depends, Form
+from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session 
 from typing import List
 from database import get_db
-from controller.session_controller import get_all_sessions, create_session, get_session, update_session, delete_session, login
-from schema.session_schema import SessionSchema, SessionCreate, SessionUpdate, TokenData
+from controller.session_controller import get_all_sessions, create_session, get_session, update_session, delete_session
+from schema.session_schema import SessionSchema, SessionCreate, SessionUpdate
 from depends import get_current_user
 
 session_router = APIRouter()
@@ -31,8 +31,4 @@ def update_existing_session(session_id: int, session: SessionUpdate, db: Session
 def delete_existing_session(session_id: int, db: Session = Depends(get_db)):
     delete_session(db=db, session_id=session_id)
     return {"detail": "Session delete"}
-
-@session_router.post("/login", response_model=TokenData)
-def login_user(username: str = Form(...), password: str = Form(...),db: Session = Depends(get_db)):
-    return login(db, username, password)
 

@@ -7,7 +7,6 @@ class Sessions(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     last_login = Column(DateTime, index=True)
-    end_session = Column(DateTime, index=True)
     user_agent = Column(String)
     ip = Column(String)
     jwt_token = Column(String)

@@ -3,9 +3,9 @@ import os
 from fastapi.testclient import TestClient
 from server import app
 
-@pytest.mark.route
-def test_create_person(db_session):
-    token = os.getenv('CREATE_TOKEN')
+@pytest.mark.auth
+def test_auth_create_person(db_session):
+    token = os.getenv('CREATE_TOKEN') + "invalid"
     headers = {
         "token": f"{token}"
     }
@@ -19,4 +19,4 @@ def test_create_person(db_session):
     client = TestClient(app)
     response = client.post("/person/", json=person_data, headers=headers)
 
-    assert response.status_code == 200
+    assert response.status_code == 403
