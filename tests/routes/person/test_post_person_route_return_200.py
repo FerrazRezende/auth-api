@@ -11,9 +11,11 @@ def test_create_person(db_session):
     }
 
     person_data = {
-        "first_name": "teste",
-        "last_name": "da silva",
-        "birth_date": "15/09/2000"
+      "first_name": "teste",
+      "last_name": "porra",
+      "birth_date": "01/05/2055",
+      "username": "teste.porra",
+      "password": "testehehe"
     }
 
     client = TestClient(app)

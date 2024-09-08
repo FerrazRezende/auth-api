@@ -1,23 +1,14 @@
 from sqlalchemy import create_engine, MetaData
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, Session
 from sqlalchemy.ext.declarative import declarative_base
-from dotenv import load_dotenv
+from settings import DATABASE_URL
 
-import os 
-
-load_dotenv()
-
-PG_PASS = os.getenv("PG_PASS")
-PG_USER = os.getenv("PG_USER")
-PG_DB = os.getenv("PG_DB")
-TEST_PG_DB = os.getenv("TEST_DB")
-
-DATABASE_URL = f"postgresql://{PG_USER}:{PG_PASS}@172.18.0.2:5432/{PG_DB}"
-
+# Vars for setting db
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(bind=engine)
 
-def get_db():
+# Function to create db session
+def get_db() -> Session:
     db = SessionLocal()
     try:
         yield db

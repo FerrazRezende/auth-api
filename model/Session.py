@@ -9,6 +9,4 @@ class Sessions(Base):
     last_login = Column(DateTime, index=True)
     user_agent = Column(String)
     ip = Column(String)
-    jwt_token = Column(String)
-    attemps = Column(Integer)
     person_id = Column(Integer, ForeignKey("person.id"))

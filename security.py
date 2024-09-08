@@ -6,20 +6,23 @@ import secrets
 import string
 import os
 
-
-
+# Settings for pass encryption
 JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY')
 JWT_ALGORITHM = os.getenv('JWT_ALGORITHM')
 JWT_EXPIRATION_TIME_MINUTES = int(os.getenv('JWT_EXPIRATION_TIME_MINUTES'))
 
-
+# Create token var
 CREATE_TOKEN = os.getenv('CREATE_TOKEN')
 
 invalid_tokens = set()
 
+
+# Context for encryption/decryption pass
 pwd_context = CryptContext(schemes=["sha256_crypt"], deprecated="auto")
 
-
+# |-------------------------------|
+# | Functions to manipulate token |
+# |-------------------------------|
 def create_token_jwt(subject: Union[str, Any]) -> str:
     expire = datetime.utcnow() + timedelta(minutes=JWT_EXPIRATION_TIME_MINUTES)
     to_encode = {"exp": expire, "sub": str(subject)}

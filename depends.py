@@ -8,9 +8,12 @@ from schema.auth_schema import TokenPayload
 from model.Person import Person
 from security import JWT_SECRET_KEY, JWT_ALGORITHM, CREATE_TOKEN
 
+# Login route
 reusable_oauth2 = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
-
+# |-------------------|
+# | Depends functions |
+# |-------------------|
 def get_current_user(token: str = Depends(reusable_oauth2), db: Session = Depends(get_db)) -> Person:
     try: 
         payload = jwt.decode(token, JWT_SECRET_KEY, algorithms=[JWT_ALGORITHM])

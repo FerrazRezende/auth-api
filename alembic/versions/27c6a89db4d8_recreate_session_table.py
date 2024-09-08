@@ -25,8 +25,6 @@ def upgrade() -> None:
         sa.Column('last_login', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
         sa.Column('user_agent', sa.VARCHAR(), autoincrement=False, nullable=True),
         sa.Column('ip', sa.VARCHAR(), autoincrement=False, nullable=True),
-        sa.Column('jwt_token', sa.VARCHAR(), autoincrement=False, nullable=True),
-        sa.Column('attemps', sa.INTEGER(), nullable=True),
         sa.Column('person_id', sa.INTEGER(), sa.ForeignKey('person.id'), nullable=False),
         sa.PrimaryKeyConstraint('id', name='session_pkey')
     )

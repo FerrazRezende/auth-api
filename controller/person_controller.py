@@ -1,11 +1,11 @@
-from typing import List
+from typing import List, Type, Optional, Union
 from fastapi import HTTPException
-from typing import List, Type
-from fastapi import HTTPException
+from sqlalchemy import or_
 from sqlalchemy.orm import Session
 from model.Person import Person
 from model.Session import Sessions
 from schema.person_schema import PersonCreate, PersonUpdate
+from security import get_password_hash
 from datetime import datetime
 
 
@@ -24,17 +24,20 @@ def get_all_persons(db: Session, skip: int, limit: int) -> List[Type[Person]]:
 def create_person(db: Session, person: PersonCreate) -> Person:
     birth_date = datetime.strptime(person.birth_date, '%Y-%m-%d').date()
 
+    hashed_password = get_password_hash(person.password)
+
     db_person = Person(
         first_name=person.first_name,
         last_name=person.last_name,
         birth_date=birth_date,
-        username=f"{person.first_name}.{person.last_name}",
-        password="123"
+        username=person.username.lower(),
+        password=hashed_password
     )
 
     db.add(db_person)
     db.commit()
     db.refresh(db_person)
+
     db_person.birth_date = db_person.birth_date.isoformat()
     db_person.created_at = db_person.created_at.isoformat()
 
@@ -79,3 +82,39 @@ def delete_person(db: Session, person_id: int) -> dict[str, str]:
     db.delete(db_person)
     db.commit()
     return {"message": "Person deleted successfully"}
+
+
+def get_person_by_criteria(db: Session,
+                           first_name: Optional[str] = None, 
+                           last_name: Optional[str] = None, 
+                           username: Optional[str] = None
+                           ) -> Union[Person, List[Type[Person]]]:
+
+    person = None
+
+    if first_name and last_name:
+        person = db.query(Person).filter(Person.first_name == first_name, Person.last_name == last_name).first()
+    
+    elif first_name or last_name:
+        persons = db.query(Person).filter(or_(Person.first_name == first_name, Person.last_name == last_name)).all()
+
+        for p in persons:
+            p.birth_date = p.birth_date.isoformat()
+            p.created_at = p.created_at.isoformat()
+
+        if len(persons) == 1:
+            return persons[0]
+
+        return persons
+    
+    elif username:
+        person = db.query(Person).filter(Person.username == username).first()
+
+    if not person:
+        raise HTTPException(status_code=404, detail="Not found")
+    
+    person.birth_date = person.birth_date.isoformat()
+    person.created_at = person.created_at.isoformat()
+
+    return person
+    

@@ -7,5 +7,4 @@ class TokenPayload(BaseModel):
 class TokenData(BaseModel):
     access_token: str
     token_type: str
-    token_type: str
     id_user: int

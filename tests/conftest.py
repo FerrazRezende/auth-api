@@ -2,7 +2,7 @@ import pytest
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from database import PG_PASS, PG_USER, TEST_PG_DB
+from settings import PG_PASS, PG_USER, TEST_PG_DB
 from server import app
 from database import get_db
 
@@ -10,7 +10,7 @@ Base = declarative_base()
 
 @pytest.fixture(scope="session")
 def test_engine():
-    return create_engine(f"postgresql://{PG_USER}:{PG_PASS}@172.18.0.2:5432/{TEST_PG_DB}")
+        return create_engine(f"postgresql://{PG_USER}:{PG_PASS}@172.18.0.2:5432/{TEST_PG_DB}")
 
 @pytest.fixture(scope="session")
 def TestSessionLocal(test_engine):

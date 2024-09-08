@@ -1,43 +1,26 @@
 from fastapi.testclient import TestClient
 from server import app
 from datetime import datetime
+from security import get_password_hash
 import os
 
-def get_token_jwt():
+def get_token_jwt(first_name, last_name, birth_date, username, password):
+    person_r = create_person(first_name, last_name, birth_date, username, password)
+
     client = TestClient(app)
 
-    token = os.getenv('CREATE_TOKEN')
-    headers = {
-        "token": f"{token}"
-    }
-
-    person_data = {
-        "first_name": "matheus",
-        "last_name": "ferraz",
-        "birth_date": "15/09/2000"
-    }
-
-    r = client.post("/person/", json=person_data, headers=headers)
-
-    person_r = r.json()
-
-    password = "123456"
-    password_data = {
-        "password": password
-    }
-
-    client.put(f"/person/{person_r['id']}", json=password_data)
-
     login_data = {
-        "username": person_r['username'],
-        "password": password
+        "username": person_r['user'],
+        "password": person_r['pass'],
     }
 
-    r = client.post("/session/login/", data=login_data)
+    r = client.post("/auth/login/", data=login_data)
+
+    print(login_data)
 
     return r.json()['access_token']
 
-def create_person():
+def create_person(first_name, last_name, birth_date, username, password):
     token = os.getenv("CREATE_TOKEN")
 
     headers = {
@@ -45,15 +28,22 @@ def create_person():
     }
 
     person_data = {
-        "first_name": "teste",
-        "last_name": "da silva",
-        "birth_date": "25/09/2050"
+      "first_name": first_name,
+      "last_name": last_name,
+      "birth_date": birth_date,
+      "username": username,
+      "password": password
     }
 
     client = TestClient(app)
     response = client.post("/person/", headers=headers, json=person_data)
 
-    return response.json()
+    return {
+        "id": response.json()['id'],
+        "user": response.json()['username'],
+        "pass": person_data['password']
+    }
+
 
 def create_session(token):
     person = create_person()
