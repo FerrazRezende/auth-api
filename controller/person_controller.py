@@ -1,14 +1,20 @@
-from typing import List, Type, Optional, Union
-from fastapi import HTTPException
-from sqlalchemy import or_
-from sqlalchemy.orm import Session
-from model.Person import Person
-from model.Session import Sessions
 from schema.person_schema import PersonCreate, PersonUpdate
+from typing import List, Type, Optional, Union, Dict
 from security import get_password_hash
+from model.Session import Sessions
+from sqlalchemy.orm import Session
+from fastapi import HTTPException
+from model.Person import Person
 from datetime import datetime
+from sqlalchemy import or_
 
 
+
+
+# |-------------------|
+# | Person Controller |
+# |-------------------|
+# Function for list all persons
 def get_all_persons(db: Session, skip: int, limit: int) -> List[Type[Person]]:
     persons = db.query(Person).offset(skip).limit(limit).all()
 
@@ -21,6 +27,7 @@ def get_all_persons(db: Session, skip: int, limit: int) -> List[Type[Person]]:
     
     return persons
 
+# Function for create person with 'CREATE TOKEN'
 def create_person(db: Session, person: PersonCreate) -> Person:
     birth_date = datetime.strptime(person.birth_date, '%Y-%m-%d').date()
 
@@ -29,6 +36,7 @@ def create_person(db: Session, person: PersonCreate) -> Person:
     db_person = Person(
         first_name=person.first_name,
         last_name=person.last_name,
+        email=person.email,
         birth_date=birth_date,
         username=person.username.lower(),
         password=hashed_password
@@ -43,7 +51,8 @@ def create_person(db: Session, person: PersonCreate) -> Person:
 
     return db_person
 
-def get_person(db: Session, person_id: int) -> Person:
+# Function for get specific person with their id
+def get_person(db: Session, person_id: int) -> Type[Person]:
     person = db.query(Person).filter(Person.id == person_id).first()
 
     if not person:
@@ -51,26 +60,26 @@ def get_person(db: Session, person_id: int) -> Person:
     
     person.created_at = person.created_at.isoformat()
     person.birth_date = person.birth_date.isoformat()
+
     return person
 
-def update_person(db: Session, person_id: int, person: PersonUpdate):
+# Function to edit a person using their id
+def update_person(db: Session, person_id: int, person: PersonUpdate) -> Type[Person]:
     db_person = db.query(Person).filter(Person.id == person_id).first()
+
     if not db_person:
         raise HTTPException(status_code=404, detail="Person not found")
-
-    if person.password is not None:
-        db_person.password = person.password
     
     for key, value in vars(person).items():
         if value is not None:
             setattr(db_person, key, value)
 
-
     db.commit()
     db.refresh(db_person)
     return db_person
 
-def delete_person(db: Session, person_id: int) -> dict[str, str]:
+# Function to remove a person using their id
+def delete_person(db: Session, person_id: int) -> Dict[str, str]:
     db_sessions = db.query(Sessions).filter(Sessions.person_id == person_id).all()
     for session in db_sessions:
         db.delete(session)
@@ -83,18 +92,25 @@ def delete_person(db: Session, person_id: int) -> dict[str, str]:
     db.commit()
     return {"message": "Person deleted successfully"}
 
-
-def get_person_by_criteria(db: Session,
-                           first_name: Optional[str] = None, 
-                           last_name: Optional[str] = None, 
-                           username: Optional[str] = None
-                           ) -> Union[Person, List[Type[Person]]]:
+# Search an user using first name, last name or username
+def get_person_by_criteria(
+        db: Session,
+        first_name: Optional[str] = None,
+        last_name: Optional[str] = None,
+        username: Optional[str] = None
+) -> Union[Person, List[Type[Person]], Type[Person]]:
 
     person = None
 
+    if first_name:
+        first_name = first_name.capitalize()
+
+    if last_name:
+        last_name = last_name.capitalize()
+
     if first_name and last_name:
         person = db.query(Person).filter(Person.first_name == first_name, Person.last_name == last_name).first()
-    
+
     elif first_name or last_name:
         persons = db.query(Person).filter(or_(Person.first_name == first_name, Person.last_name == last_name)).all()
 
@@ -104,6 +120,9 @@ def get_person_by_criteria(db: Session,
 
         if len(persons) == 1:
             return persons[0]
+
+        if len(persons) == 0:
+            raise HTTPException(status_code=404, detail="Not found")
 
         return persons
     

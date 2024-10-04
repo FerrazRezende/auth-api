@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Reset</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .email-container {
+            background-color: #ffffff;
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        h1 {
+            color: #333333;
+            font-size: 24px;
+        }
+
+        p {
+            color: #555555;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .reset-code {
+            font-size: 28px;
+            color: #4CAF50;
+            font-weight: 500;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .footer {
+            font-size: 14px;
+            color: #888888;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <h1>Password Reset Request</h1>
+        <p>Hello,</p>
+        <p>We received a request to reset your password. Use the following code to reset it:</p>
+
+        <div class="reset-code">{{ reset_code }}</div>
+
+        <p>If you didn't request a password reset, please ignore this email.</p>
+
+        <p>Best regards,</p>
+        <p>Your Support Team</p>
+
+        <div class="footer">
+            &copy; 2024. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

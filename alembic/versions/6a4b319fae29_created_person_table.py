@@ -24,6 +24,7 @@ def upgrade() -> None:
         sa.Column('id', sa.Integer, primary_key=True, index=True),
         sa.Column('first_name', sa.String, index=True),
         sa.Column('last_name', sa.String, index=True),
+        sa.Column('email', sa.String, index=True),
         sa.Column('username', sa.String, unique=True, index=True),
         sa.Column('password', sa.String, index=True),
         sa.Column('birth_date', sa.Date),

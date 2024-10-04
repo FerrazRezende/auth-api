@@ -3,6 +3,7 @@ from datetime import datetime
 
 
 
+
 class SessionResponse(BaseModel):
     id: int
     last_login: datetime

@@ -9,6 +9,7 @@ class Person(Base):
     first_name = Column(String, index=True)
     last_name = Column(String, index=True)
     password = Column(String, index=True)
+    email = Column(String, index=True)
     username = Column(String, unique=True, index=True)
     birth_date = Column(Date)
     created_at = Column(DateTime, server_default=func.now())

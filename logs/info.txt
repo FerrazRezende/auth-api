@@ -1,0 +1,318 @@
+2024-10-04 17:16:40,155 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 192.168.16.5
+                ServerPort: 8000
+                ClientIP: 192.168.16.1
+                ClientPort: 43106
+                Scheme: http
+                Method: GET
+                Path: /docs
+                Raw Path: b'/docs'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: localhost:8000             
+             connection: keep-alive             
+             sec-ch-ua: "Microsoft Edge";v="129", "Not=A?Brand";v="8", "Chromium";v="129"             
+             sec-ch-ua-mobile: ?0             
+             sec-ch-ua-platform: "Windows"             
+             upgrade-insecure-requests: 1             
+             user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0             
+             accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7             
+             sec-fetch-site: none             
+             sec-fetch-mode: navigate             
+             sec-fetch-user: ?1             
+             sec-fetch-dest: document             
+             accept-encoding: gzip, deflate, br, zstd             
+             accept-language: pt-BR,pt;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6             
+             cookie: wp-settings-time-1=1715629870; wp-settings-1=mfold%3Do; PGADMIN_LANGUAGE=en; JSESSIONID.bd3c76de=node0o9m2ng3awck0l9noamtnfeg50.node0; grafana_session=a7535407c57c3d50d16e95aea4067dbf; grafana_session_expiry=1727750342; user_id=2
+
+
+            
+2024-10-04 17:16:40,156 - INFO - 
+                Request url: http://localhost:8000/docs
+
+                Request base_url: http://localhost:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {'wp-settings-time-1': '1715629870', 'wp-settings-1': 'mfold%3Do', 'PGADMIN_LANGUAGE': 'en', 'JSESSIONID.bd3c76de': 'node0o9m2ng3awck0l9noamtnfeg50.node0', 'grafana_session': 'a7535407c57c3d50d16e95aea4067dbf', 'grafana_session_expiry': '1727750342', 'user_id': '2'}
+
+                Request client: Address(host='192.168.16.1', port=43106)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: localhost:8000             
+             connection: keep-alive             
+             sec-ch-ua: "Microsoft Edge";v="129", "Not=A?Brand";v="8", "Chromium";v="129"             
+             sec-ch-ua-mobile: ?0             
+             sec-ch-ua-platform: "Windows"             
+             upgrade-insecure-requests: 1             
+             user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0             
+             accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7             
+             sec-fetch-site: none             
+             sec-fetch-mode: navigate             
+             sec-fetch-user: ?1             
+             sec-fetch-dest: document             
+             accept-encoding: gzip, deflate, br, zstd             
+             accept-language: pt-BR,pt;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6             
+             cookie: wp-settings-time-1=1715629870; wp-settings-1=mfold%3Do; PGADMIN_LANGUAGE=en; JSESSIONID.bd3c76de=node0o9m2ng3awck0l9noamtnfeg50.node0; grafana_session=a7535407c57c3d50d16e95aea4067dbf; grafana_session_expiry=1727750342; user_id=2
+            
+2024-10-04 17:16:40,419 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 192.168.16.5
+                ServerPort: 8000
+                ClientIP: 192.168.16.1
+                ClientPort: 43106
+                Scheme: http
+                Method: GET
+                Path: /openapi.json
+                Raw Path: b'/openapi.json'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: localhost:8000             
+             connection: keep-alive             
+             sec-ch-ua-platform: "Windows"             
+             user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0             
+             accept: application/json,*/*             
+             sec-ch-ua: "Microsoft Edge";v="129", "Not=A?Brand";v="8", "Chromium";v="129"             
+             sec-ch-ua-mobile: ?0             
+             sec-fetch-site: same-origin             
+             sec-fetch-mode: cors             
+             sec-fetch-dest: empty             
+             referer: http://localhost:8000/docs             
+             accept-encoding: gzip, deflate, br, zstd             
+             accept-language: pt-BR,pt;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6             
+             cookie: wp-settings-time-1=1715629870; wp-settings-1=mfold%3Do; PGADMIN_LANGUAGE=en; JSESSIONID.bd3c76de=node0o9m2ng3awck0l9noamtnfeg50.node0; grafana_session=a7535407c57c3d50d16e95aea4067dbf; grafana_session_expiry=1727750342; user_id=2
+
+
+            
+2024-10-04 17:16:40,419 - INFO - 
+                Request url: http://localhost:8000/openapi.json
+
+                Request base_url: http://localhost:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {'wp-settings-time-1': '1715629870', 'wp-settings-1': 'mfold%3Do', 'PGADMIN_LANGUAGE': 'en', 'JSESSIONID.bd3c76de': 'node0o9m2ng3awck0l9noamtnfeg50.node0', 'grafana_session': 'a7535407c57c3d50d16e95aea4067dbf', 'grafana_session_expiry': '1727750342', 'user_id': '2'}
+
+                Request client: Address(host='192.168.16.1', port=43106)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: localhost:8000             
+             connection: keep-alive             
+             sec-ch-ua-platform: "Windows"             
+             user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0             
+             accept: application/json,*/*             
+             sec-ch-ua: "Microsoft Edge";v="129", "Not=A?Brand";v="8", "Chromium";v="129"             
+             sec-ch-ua-mobile: ?0             
+             sec-fetch-site: same-origin             
+             sec-fetch-mode: cors             
+             sec-fetch-dest: empty             
+             referer: http://localhost:8000/docs             
+             accept-encoding: gzip, deflate, br, zstd             
+             accept-language: pt-BR,pt;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6             
+             cookie: wp-settings-time-1=1715629870; wp-settings-1=mfold%3Do; PGADMIN_LANGUAGE=en; JSESSIONID.bd3c76de=node0o9m2ng3awck0l9noamtnfeg50.node0; grafana_session=a7535407c57c3d50d16e95aea4067dbf; grafana_session_expiry=1727750342; user_id=2
+            
+2024-10-04 17:22:48,374 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 192.168.32.5
+                ServerPort: 8000
+                ClientIP: 192.168.32.1
+                ClientPort: 47864
+                Scheme: http
+                Method: GET
+                Path: /docs
+                Raw Path: b'/docs'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: localhost:8000             
+             connection: keep-alive             
+             cache-control: max-age=0             
+             sec-ch-ua: "Microsoft Edge";v="129", "Not=A?Brand";v="8", "Chromium";v="129"             
+             sec-ch-ua-mobile: ?0             
+             sec-ch-ua-platform: "Windows"             
+             upgrade-insecure-requests: 1             
+             user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0             
+             accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7             
+             sec-fetch-site: same-origin             
+             sec-fetch-mode: navigate             
+             sec-fetch-user: ?1             
+             sec-fetch-dest: document             
+             accept-encoding: gzip, deflate, br, zstd             
+             accept-language: pt-BR,pt;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6             
+             cookie: wp-settings-time-1=1715629870; wp-settings-1=mfold%3Do; PGADMIN_LANGUAGE=en; JSESSIONID.bd3c76de=node0o9m2ng3awck0l9noamtnfeg50.node0; grafana_session=a7535407c57c3d50d16e95aea4067dbf; grafana_session_expiry=1727750342; user_id=2
+
+
+            
+2024-10-04 17:22:48,375 - INFO - 
+                Request url: http://localhost:8000/docs
+
+                Request base_url: http://localhost:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {'wp-settings-time-1': '1715629870', 'wp-settings-1': 'mfold%3Do', 'PGADMIN_LANGUAGE': 'en', 'JSESSIONID.bd3c76de': 'node0o9m2ng3awck0l9noamtnfeg50.node0', 'grafana_session': 'a7535407c57c3d50d16e95aea4067dbf', 'grafana_session_expiry': '1727750342', 'user_id': '2'}
+
+                Request client: Address(host='192.168.32.1', port=47864)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: localhost:8000             
+             connection: keep-alive             
+             cache-control: max-age=0             
+             sec-ch-ua: "Microsoft Edge";v="129", "Not=A?Brand";v="8", "Chromium";v="129"             
+             sec-ch-ua-mobile: ?0             
+             sec-ch-ua-platform: "Windows"             
+             upgrade-insecure-requests: 1             
+             user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0             
+             accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7             
+             sec-fetch-site: same-origin             
+             sec-fetch-mode: navigate             
+             sec-fetch-user: ?1             
+             sec-fetch-dest: document             
+             accept-encoding: gzip, deflate, br, zstd             
+             accept-language: pt-BR,pt;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6             
+             cookie: wp-settings-time-1=1715629870; wp-settings-1=mfold%3Do; PGADMIN_LANGUAGE=en; JSESSIONID.bd3c76de=node0o9m2ng3awck0l9noamtnfeg50.node0; grafana_session=a7535407c57c3d50d16e95aea4067dbf; grafana_session_expiry=1727750342; user_id=2
+            
+2024-10-04 17:22:48,587 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 192.168.32.5
+                ServerPort: 8000
+                ClientIP: 192.168.32.1
+                ClientPort: 47864
+                Scheme: http
+                Method: GET
+                Path: /openapi.json
+                Raw Path: b'/openapi.json'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: localhost:8000             
+             connection: keep-alive             
+             sec-ch-ua-platform: "Windows"             
+             user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0             
+             accept: application/json,*/*             
+             sec-ch-ua: "Microsoft Edge";v="129", "Not=A?Brand";v="8", "Chromium";v="129"             
+             sec-ch-ua-mobile: ?0             
+             sec-fetch-site: same-origin             
+             sec-fetch-mode: cors             
+             sec-fetch-dest: empty             
+             referer: http://localhost:8000/docs             
+             accept-encoding: gzip, deflate, br, zstd             
+             accept-language: pt-BR,pt;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6             
+             cookie: wp-settings-time-1=1715629870; wp-settings-1=mfold%3Do; PGADMIN_LANGUAGE=en; JSESSIONID.bd3c76de=node0o9m2ng3awck0l9noamtnfeg50.node0; grafana_session=a7535407c57c3d50d16e95aea4067dbf; grafana_session_expiry=1727750342; user_id=2
+
+
+            
+2024-10-04 17:22:48,587 - INFO - 
+                Request url: http://localhost:8000/openapi.json
+
+                Request base_url: http://localhost:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {'wp-settings-time-1': '1715629870', 'wp-settings-1': 'mfold%3Do', 'PGADMIN_LANGUAGE': 'en', 'JSESSIONID.bd3c76de': 'node0o9m2ng3awck0l9noamtnfeg50.node0', 'grafana_session': 'a7535407c57c3d50d16e95aea4067dbf', 'grafana_session_expiry': '1727750342', 'user_id': '2'}
+
+                Request client: Address(host='192.168.32.1', port=47864)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: localhost:8000             
+             connection: keep-alive             
+             sec-ch-ua-platform: "Windows"             
+             user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0             
+             accept: application/json,*/*             
+             sec-ch-ua: "Microsoft Edge";v="129", "Not=A?Brand";v="8", "Chromium";v="129"             
+             sec-ch-ua-mobile: ?0             
+             sec-fetch-site: same-origin             
+             sec-fetch-mode: cors             
+             sec-fetch-dest: empty             
+             referer: http://localhost:8000/docs             
+             accept-encoding: gzip, deflate, br, zstd             
+             accept-language: pt-BR,pt;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6             
+             cookie: wp-settings-time-1=1715629870; wp-settings-1=mfold%3Do; PGADMIN_LANGUAGE=en; JSESSIONID.bd3c76de=node0o9m2ng3awck0l9noamtnfeg50.node0; grafana_session=a7535407c57c3d50d16e95aea4067dbf; grafana_session_expiry=1727750342; user_id=2
+            

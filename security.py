@@ -1,9 +1,7 @@
 from passlib.context import CryptContext
-from typing import Any, Union
 from datetime import datetime, timedelta
+from typing import Any, Union
 from jose import jwt
-import secrets
-import string
 import os
 
 # Settings for pass encryption
@@ -13,9 +11,6 @@ JWT_EXPIRATION_TIME_MINUTES = int(os.getenv('JWT_EXPIRATION_TIME_MINUTES'))
 
 # Create token var
 CREATE_TOKEN = os.getenv('CREATE_TOKEN')
-
-invalid_tokens = set()
-
 
 # Context for encryption/decryption pass
 pwd_context = CryptContext(schemes=["sha256_crypt"], deprecated="auto")

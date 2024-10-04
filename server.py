@@ -2,20 +2,24 @@
 Created by: Matheus Ferraz
 AuthAPI
 """
-import os
-from pathlib import Path
 
-from typing_extensions import Annotated
-
-from depends import get_current_user
-from router.person_router import person_router
-from router.session_router import session_router
-from router.auth_router import auth_router
+from middleware.request_logger import RequestLoggerMiddleware
+from prometheus_fastapi_instrumentator import Instrumentator
+from starlette.middleware.sessions import SessionMiddleware
 from fastapi.middleware.cors import CORSMiddleware
-from typing import Dict
-from fastapi import FastAPI, UploadFile, Depends, File, HTTPException
+from router.session_router import session_router
+from router.person_router import person_router
 from fastapi.staticfiles import StaticFiles
+from router.auth_router import auth_router
+from security import JWT_SECRET_KEY
+from settings import UPLOAD_DIR
+from fastapi import FastAPI
+from typing import Dict
 import uvicorn
+import os
+
+
+
 
 # Server instance
 app = FastAPI(
@@ -24,9 +28,9 @@ app = FastAPI(
     description="Authentication API that returns a JWT token, stores people and sessions",
 )
 
-# |--------------|
-# | CORS Session |
-# |--------------|
+# |-------------|
+# | Middlewares |
+# |-------------|
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -34,6 +38,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+app.add_middleware(RequestLoggerMiddleware)
+app.add_middleware(SessionMiddleware, secret_key=JWT_SECRET_KEY)
 
 # |--------|
 # | Routes |
@@ -42,47 +48,12 @@ app.include_router(person_router, prefix="/person", tags=["Person"])
 app.include_router(session_router, prefix="/session", tags=["Session"])
 app.include_router(auth_router, prefix='/auth', tags=["Auth"])
 
-
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-
-
-UPLOAD_DIR = "static/img/"
-
-if not os.path.exists(UPLOAD_DIR):
-    os.makedirs(UPLOAD_DIR)
-
-def ensure_user_directory(username: str):
-    user_dir = os.path.join(UPLOAD_DIR, username)
-    Path(user_dir).mkdir(parents=True, exist_ok=True)
-    return user_dir
-
-
-def save_image(file: UploadFile, username: str) -> str:
-    user_dir = ensure_user_directory(username)
-
-    file_path = os.path.join(user_dir, "profilepic")
-
-    with open(file_path, "wb") as buffer:
-        buffer.write(file.file.read())
-
-    return file_path
-
-
-@app.post("/upload-photo/", tags=["Profile pic"])
-async def upload_user_photo(
-        file: Annotated[UploadFile, File(description="User profile image")],
-        current_user: dict = Depends(get_current_user)
-):
-    username = current_user.username
-
-    try:
-        file_path = save_image(file, username)
-
-    except Exception as e:
-        raise HTTPException(status_code=500, detail="Error saving file")
-
-    return {"message": f"File uploaded successfully", "filepath": file_path}
+# |------------|
+# | Prometheus |
+# |------------|
+Instrumentator().instrument(app).expose(app)
 
 
 # Root route
@@ -92,4 +63,7 @@ def read_root() -> Dict[str, str]:
 
 # -------------- Server start --------------
 if __name__ == "__main__":
+    if not os.path.exists(UPLOAD_DIR):
+        os.makedirs(UPLOAD_DIR)
+
     uvicorn.run(app, host="0.0.0.0", port=8000)
