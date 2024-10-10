@@ -1,0 +1,2 @@
+2024-10-08 02:24:59,771 - ERROR - An error occurred: change_user_password() takes 2 positional arguments but 3 were given
+2024-10-08 02:25:31,075 - ERROR - An error occurred: change_user_password() takes 2 positional arguments but 3 were given

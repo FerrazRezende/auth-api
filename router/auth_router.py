@@ -36,13 +36,13 @@ def login_user(
 
 # /auth/change_password/
 @auth_router.put("/change_password")
-def change_password(request: Request,  payload: ChangePass,  db: Session = Depends(get_db)):
+def change_password(payload: ChangePass,  db: Session = Depends(get_db)):
     """
     For reset password
 
     This endpoint recive reset code generated in 'reset_code' endpoint
     """
-    return change_user_password(request, payload, db)
+    return change_user_password(payload, db)
 
 # /auth/new_reset_code/
 """
