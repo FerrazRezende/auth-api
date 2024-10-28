@@ -17,7 +17,8 @@ PG_PASS = os.getenv("PG_PASS")
 PG_USER = os.getenv("PG_USER")
 PG_DB = os.getenv("PG_DB")
 TEST_PG_DB = os.getenv("TEST_DB")
-DATABASE_URL = f"postgresql://{PG_USER}:{PG_PASS}@postgres:5432/{PG_DB}"
+POSTGRES_IP = "172.18.0.3"
+DATABASE_URL = f"postgresql://{PG_USER}:{PG_PASS}@{POSTGRES_IP}:5432/{PG_DB}"
 # ---------------------------
 # ---------- Redis ----------
 EXPIRATION_TIME = os.getenv("EXPIRATION_TIME")

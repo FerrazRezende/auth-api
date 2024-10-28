@@ -8358,3 +8358,1261 @@
              accept-encoding: gzip, deflate, br, zstd             
              accept-language: pt-BR,pt;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
             
+2024-10-16 12:26:55,582 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 127.0.0.1
+                ServerPort: 8000
+                ClientIP: 127.0.0.1
+                ClientPort: 41316
+                Scheme: http
+                Method: GET
+                Path: /docs
+                Raw Path: b'/docs'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: localhost:8000             
+             connection: keep-alive             
+             sec-ch-ua: "Chromium";v="128", "Not;A=Brand";v="24", "Opera";v="114"             
+             sec-ch-ua-mobile: ?0             
+             sec-ch-ua-platform: "Windows"             
+             upgrade-insecure-requests: 1             
+             user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 OPR/114.0.0.0             
+             accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7             
+             sec-fetch-site: none             
+             sec-fetch-mode: navigate             
+             sec-fetch-user: ?1             
+             sec-fetch-dest: document             
+             accept-encoding: gzip, deflate, br, zstd             
+             accept-language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+            
+2024-10-16 12:26:55,586 - INFO - 
+                Request url: http://localhost:8000/docs
+
+                Request base_url: http://localhost:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='127.0.0.1', port=41316)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: localhost:8000             
+             connection: keep-alive             
+             sec-ch-ua: "Chromium";v="128", "Not;A=Brand";v="24", "Opera";v="114"             
+             sec-ch-ua-mobile: ?0             
+             sec-ch-ua-platform: "Windows"             
+             upgrade-insecure-requests: 1             
+             user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 OPR/114.0.0.0             
+             accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7             
+             sec-fetch-site: none             
+             sec-fetch-mode: navigate             
+             sec-fetch-user: ?1             
+             sec-fetch-dest: document             
+             accept-encoding: gzip, deflate, br, zstd             
+             accept-language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7
+            
+2024-10-16 12:26:55,830 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 127.0.0.1
+                ServerPort: 8000
+                ClientIP: 127.0.0.1
+                ClientPort: 41316
+                Scheme: http
+                Method: GET
+                Path: /openapi.json
+                Raw Path: b'/openapi.json'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: localhost:8000             
+             connection: keep-alive             
+             sec-ch-ua: "Chromium";v="128", "Not;A=Brand";v="24", "Opera";v="114"             
+             accept: application/json,*/*             
+             sec-ch-ua-mobile: ?0             
+             user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 OPR/114.0.0.0             
+             sec-ch-ua-platform: "Windows"             
+             sec-fetch-site: same-origin             
+             sec-fetch-mode: cors             
+             sec-fetch-dest: empty             
+             referer: http://localhost:8000/docs             
+             accept-encoding: gzip, deflate, br, zstd             
+             accept-language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+            
+2024-10-16 12:26:55,831 - INFO - 
+                Request url: http://localhost:8000/openapi.json
+
+                Request base_url: http://localhost:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='127.0.0.1', port=41316)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: localhost:8000             
+             connection: keep-alive             
+             sec-ch-ua: "Chromium";v="128", "Not;A=Brand";v="24", "Opera";v="114"             
+             accept: application/json,*/*             
+             sec-ch-ua-mobile: ?0             
+             user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 OPR/114.0.0.0             
+             sec-ch-ua-platform: "Windows"             
+             sec-fetch-site: same-origin             
+             sec-fetch-mode: cors             
+             sec-fetch-dest: empty             
+             referer: http://localhost:8000/docs             
+             accept-encoding: gzip, deflate, br, zstd             
+             accept-language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7
+            
+2024-10-16 12:28:39,665 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 127.0.0.1
+                ServerPort: 8000
+                ClientIP: 127.0.0.1
+                ClientPort: 42262
+                Scheme: http
+                Method: POST
+                Path: /person/
+                Raw Path: b'/person/'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: localhost:8000             
+             connection: keep-alive             
+             content-length: 175             
+             sec-ch-ua: "Chromium";v="128", "Not;A=Brand";v="24", "Opera";v="114"             
+             accept: application/json             
+             sec-ch-ua-platform: "Windows"             
+             sec-ch-ua-mobile: ?0             
+             user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 OPR/114.0.0.0             
+             token: CTKN_aHkLO653V5GDNWxJdfE6d2hZqN2z6Qdwq9c             
+             content-type: application/json             
+             origin: http://localhost:8000             
+             sec-fetch-site: same-origin             
+             sec-fetch-mode: cors             
+             sec-fetch-dest: empty             
+             referer: http://localhost:8000/docs             
+             accept-encoding: gzip, deflate, br, zstd             
+             accept-language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+            
+2024-10-16 12:28:39,666 - INFO - 
+                Request url: http://localhost:8000/person/
+
+                Request base_url: http://localhost:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='127.0.0.1', port=42262)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: POST
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: localhost:8000             
+             connection: keep-alive             
+             content-length: 175             
+             sec-ch-ua: "Chromium";v="128", "Not;A=Brand";v="24", "Opera";v="114"             
+             accept: application/json             
+             sec-ch-ua-platform: "Windows"             
+             sec-ch-ua-mobile: ?0             
+             user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 OPR/114.0.0.0             
+             token: CTKN_aHkLO653V5GDNWxJdfE6d2hZqN2z6Qdwq9c             
+             content-type: application/json             
+             origin: http://localhost:8000             
+             sec-fetch-site: same-origin             
+             sec-fetch-mode: cors             
+             sec-fetch-dest: empty             
+             referer: http://localhost:8000/docs             
+             accept-encoding: gzip, deflate, br, zstd             
+             accept-language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7
+            
+2024-10-28 00:19:48,827 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 172.18.0.7
+                ServerPort: 8000
+                ClientIP: 172.18.0.3
+                ClientPort: 46076
+                Scheme: http
+                Method: GET
+                Path: /metrics
+                Raw Path: b'/metrics'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+
+
+            
+2024-10-28 00:19:48,831 - INFO - 
+                Request url: http://web:8000/metrics
+
+                Request base_url: http://web:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='172.18.0.3', port=46076)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+            
+2024-10-28 00:20:18,822 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 172.18.0.7
+                ServerPort: 8000
+                ClientIP: 172.18.0.3
+                ClientPort: 52726
+                Scheme: http
+                Method: GET
+                Path: /metrics
+                Raw Path: b'/metrics'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+
+
+            
+2024-10-28 00:20:18,823 - INFO - 
+                Request url: http://web:8000/metrics
+
+                Request base_url: http://web:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='172.18.0.3', port=52726)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+            
+2024-10-28 00:20:48,822 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 172.18.0.7
+                ServerPort: 8000
+                ClientIP: 172.18.0.3
+                ClientPort: 52294
+                Scheme: http
+                Method: GET
+                Path: /metrics
+                Raw Path: b'/metrics'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+
+
+            
+2024-10-28 00:20:48,822 - INFO - 
+                Request url: http://web:8000/metrics
+
+                Request base_url: http://web:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='172.18.0.3', port=52294)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+            
+2024-10-28 00:21:18,823 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 172.18.0.7
+                ServerPort: 8000
+                ClientIP: 172.18.0.3
+                ClientPort: 56948
+                Scheme: http
+                Method: GET
+                Path: /metrics
+                Raw Path: b'/metrics'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+
+
+            
+2024-10-28 00:21:18,823 - INFO - 
+                Request url: http://web:8000/metrics
+
+                Request base_url: http://web:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='172.18.0.3', port=56948)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+            
+2024-10-28 00:21:48,822 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 172.18.0.7
+                ServerPort: 8000
+                ClientIP: 172.18.0.3
+                ClientPort: 34990
+                Scheme: http
+                Method: GET
+                Path: /metrics
+                Raw Path: b'/metrics'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+
+
+            
+2024-10-28 00:21:48,822 - INFO - 
+                Request url: http://web:8000/metrics
+
+                Request base_url: http://web:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='172.18.0.3', port=34990)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+            
+2024-10-28 00:22:18,825 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 172.18.0.7
+                ServerPort: 8000
+                ClientIP: 172.18.0.3
+                ClientPort: 43032
+                Scheme: http
+                Method: GET
+                Path: /metrics
+                Raw Path: b'/metrics'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+
+
+            
+2024-10-28 00:22:18,825 - INFO - 
+                Request url: http://web:8000/metrics
+
+                Request base_url: http://web:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='172.18.0.3', port=43032)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+            
+2024-10-28 00:22:48,823 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 172.18.0.7
+                ServerPort: 8000
+                ClientIP: 172.18.0.3
+                ClientPort: 54596
+                Scheme: http
+                Method: GET
+                Path: /metrics
+                Raw Path: b'/metrics'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+
+
+            
+2024-10-28 00:22:48,824 - INFO - 
+                Request url: http://web:8000/metrics
+
+                Request base_url: http://web:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='172.18.0.3', port=54596)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+            
+2024-10-28 00:23:18,823 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 172.18.0.7
+                ServerPort: 8000
+                ClientIP: 172.18.0.3
+                ClientPort: 39560
+                Scheme: http
+                Method: GET
+                Path: /metrics
+                Raw Path: b'/metrics'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+
+
+            
+2024-10-28 00:23:18,823 - INFO - 
+                Request url: http://web:8000/metrics
+
+                Request base_url: http://web:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='172.18.0.3', port=39560)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+            
+2024-10-28 00:23:48,822 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 172.18.0.7
+                ServerPort: 8000
+                ClientIP: 172.18.0.3
+                ClientPort: 56440
+                Scheme: http
+                Method: GET
+                Path: /metrics
+                Raw Path: b'/metrics'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+
+
+            
+2024-10-28 00:23:48,822 - INFO - 
+                Request url: http://web:8000/metrics
+
+                Request base_url: http://web:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='172.18.0.3', port=56440)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+            
+2024-10-28 00:24:18,828 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 172.18.0.7
+                ServerPort: 8000
+                ClientIP: 172.18.0.3
+                ClientPort: 34780
+                Scheme: http
+                Method: GET
+                Path: /metrics
+                Raw Path: b'/metrics'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+
+
+            
+2024-10-28 00:24:18,829 - INFO - 
+                Request url: http://web:8000/metrics
+
+                Request base_url: http://web:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='172.18.0.3', port=34780)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+            
+2024-10-28 00:24:48,823 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 172.18.0.7
+                ServerPort: 8000
+                ClientIP: 172.18.0.3
+                ClientPort: 56002
+                Scheme: http
+                Method: GET
+                Path: /metrics
+                Raw Path: b'/metrics'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+
+
+            
+2024-10-28 00:24:48,823 - INFO - 
+                Request url: http://web:8000/metrics
+
+                Request base_url: http://web:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='172.18.0.3', port=56002)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+            
+2024-10-28 00:25:18,826 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 172.18.0.7
+                ServerPort: 8000
+                ClientIP: 172.18.0.3
+                ClientPort: 54664
+                Scheme: http
+                Method: GET
+                Path: /metrics
+                Raw Path: b'/metrics'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+
+
+            
+2024-10-28 00:25:18,827 - INFO - 
+                Request url: http://web:8000/metrics
+
+                Request base_url: http://web:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='172.18.0.3', port=54664)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+            
+2024-10-28 00:25:48,822 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 172.18.0.7
+                ServerPort: 8000
+                ClientIP: 172.18.0.3
+                ClientPort: 33234
+                Scheme: http
+                Method: GET
+                Path: /metrics
+                Raw Path: b'/metrics'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+
+
+            
+2024-10-28 00:25:48,822 - INFO - 
+                Request url: http://web:8000/metrics
+
+                Request base_url: http://web:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='172.18.0.3', port=33234)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+            
+2024-10-28 00:26:18,822 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 172.18.0.7
+                ServerPort: 8000
+                ClientIP: 172.18.0.3
+                ClientPort: 33342
+                Scheme: http
+                Method: GET
+                Path: /metrics
+                Raw Path: b'/metrics'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+
+
+            
+2024-10-28 00:26:18,822 - INFO - 
+                Request url: http://web:8000/metrics
+
+                Request base_url: http://web:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='172.18.0.3', port=33342)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+            
+2024-10-28 00:26:48,824 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 172.18.0.7
+                ServerPort: 8000
+                ClientIP: 172.18.0.3
+                ClientPort: 40806
+                Scheme: http
+                Method: GET
+                Path: /metrics
+                Raw Path: b'/metrics'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+
+
+            
+2024-10-28 00:26:48,824 - INFO - 
+                Request url: http://web:8000/metrics
+
+                Request base_url: http://web:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='172.18.0.3', port=40806)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+            
+2024-10-28 00:27:18,823 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 172.18.0.7
+                ServerPort: 8000
+                ClientIP: 172.18.0.3
+                ClientPort: 33394
+                Scheme: http
+                Method: GET
+                Path: /metrics
+                Raw Path: b'/metrics'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+
+
+            
+2024-10-28 00:27:18,823 - INFO - 
+                Request url: http://web:8000/metrics
+
+                Request base_url: http://web:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='172.18.0.3', port=33394)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+            
+2024-10-28 00:27:48,822 - INFO - 
+                |-------------------------|
+                |      Request scope      | 
+                |-------------------------|
+
+                Type: http
+                ASGI Version: 3.0
+                Spec Version: 2.4
+                HTTP Version: 1.1
+                ServerIP: 172.18.0.7
+                ServerPort: 8000
+                ClientIP: 172.18.0.3
+                ClientPort: 49188
+                Scheme: http
+                Method: GET
+                Path: /metrics
+                Raw Path: b'/metrics'
+
+
+                |------------------------|
+                |      Scope Headers     | 
+                |------------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+
+
+            
+2024-10-28 00:27:48,822 - INFO - 
+                Request url: http://web:8000/metrics
+
+                Request base_url: http://web:8000/
+
+                Request query params: 
+
+                Request path params: {}
+
+                Request cookies: {}
+
+                Request client: Address(host='172.18.0.3', port=49188)
+
+                Request session: {}
+
+
+                Request state: received
+
+                Request methods: GET
+
+
+                |------------------|
+                |      Headers     | 
+                |------------------|
+                host: web:8000             
+             user-agent: Prometheus/2.54.1             
+             accept: application/openmetrics-text;version=1.0.0;q=0.5,application/openmetrics-text;version=0.0.1;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2             
+             accept-encoding: gzip             
+             x-prometheus-scrape-timeout-seconds: 10
+            

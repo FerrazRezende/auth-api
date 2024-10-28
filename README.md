@@ -39,8 +39,8 @@ A proposta deste projeto é fornecer uma API completa e bem documentada para aux
 # Documentação
 ## Sumário:
 1. [Guia How-to](/doc/how-to.md)
-   1. Passo a passo para iniciar a aplicação
-   2. Passo a passo para iniciar a aplicação docker compose
+   1. [Passo a passo para iniciar a aplicação](/doc/how-to.md#passo-a-passo-para-iniciar-a-aplicação)
+   2. [Passo a passo para iniciar a aplicação docker compose](/doc/how-to.md#passo-a-passo-para-iniciar-a-aplicação-com-docker-compose)
 4. [Tutoriais](/doc/tutoriais.md)
    1. Configurações adicionais
    2. Configurações de criptografia

@@ -19,7 +19,7 @@ def get_all_persons(db: Session, skip: int, limit: int) -> List[Type[Person]]:
     persons = db.query(Person).offset(skip).limit(limit).all()
 
     if not persons:
-        raise HTTPException(status_code=404, detail="Not found")
+        raise HTTPException(status_code=204, detail="No content")
     
     for person in persons:
         person.birth_date = person.birth_date.isoformat()
@@ -56,7 +56,7 @@ def get_person(db: Session, person_id: int) -> Type[Person]:
     person = db.query(Person).filter(Person.id == person_id).first()
 
     if not person:
-        raise HTTPException(status_code=404, detail="Not found")
+        raise HTTPException(status_code=204, detail="No content")
     
     person.created_at = person.created_at.isoformat()
     person.birth_date = person.birth_date.isoformat()
@@ -68,7 +68,7 @@ def update_person(db: Session, person_id: int, person: PersonUpdate) -> Type[Per
     db_person = db.query(Person).filter(Person.id == person_id).first()
 
     if not db_person:
-        raise HTTPException(status_code=404, detail="Person not found")
+        raise HTTPException(status_code=204, detail="No content")
     
     for key, value in vars(person).items():
         if value is not None:
@@ -86,7 +86,7 @@ def delete_person(db: Session, person_id: int) -> Dict[str, str]:
 
     db_person = db.query(Person).filter(Person.id == person_id).first()
     if not db_person:
-        raise HTTPException(status_code=404, detail="Not found")
+        raise HTTPException(status_code=204, detail="No content")
     
     db.delete(db_person)
     db.commit()
@@ -122,7 +122,7 @@ def get_person_by_criteria(
             return persons[0]
 
         if len(persons) == 0:
-            raise HTTPException(status_code=404, detail="Not found")
+            raise HTTPException(status_code=204, detail="No content")
 
         return persons
     
@@ -130,7 +130,7 @@ def get_person_by_criteria(
         person = db.query(Person).filter(Person.username == username).first()
 
     if not person:
-        raise HTTPException(status_code=404, detail="Not found")
+        raise HTTPException(status_code=204, detail="No content")
     
     person.birth_date = person.birth_date.isoformat()
     person.created_at = person.created_at.isoformat()
